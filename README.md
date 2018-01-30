@@ -1,1 +1,4 @@
 # component-react-composition
+Example of how to use Ramda to compose and build React components.
+
+This application represents a basic Task form and is an extension of the `[basic-react-composition]`(https://github.com/criteschris/basic-react-composition) example. The components were built using classes instead of stateless functional components as in the basic example. The purpose is to demonstrate an application that is more complex where a component class makes more sense. For some components, we need to implement a Component or PureComponent (and defining the 'shouldComponentUpdate' where needed) in order to reduce the overhead of React rendering a component when unrelated state has been changed. Another technique demonstrated here is the use of a single 'onChange' event handler between multiple components. This handler is a curried function that uses the power of a Ramda lens to set the state while keeping the child component decoupled from the logic.

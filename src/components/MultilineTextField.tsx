@@ -25,7 +25,10 @@ export class MultilineTextField extends React.PureComponent<IMultilineTextFieldP
                 <div className='field-label'>
                     <label>{this.props.label}</label>
                 </div>
-                <textarea rows={6} value={this.props.value} onChange={this._onChange} />
+                <textarea
+                    rows={6}
+                    value={this.props.value}
+                    onChange={this._onChange} />
             </div>
         );
     }

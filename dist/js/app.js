@@ -5661,8 +5661,8 @@ var React = __webpack_require__(18);
 var ReactDOM = __webpack_require__(137);
 var ramda_1 = __webpack_require__(146);
 var TextField_1 = __webpack_require__(346);
-var DropdownField_1 = __webpack_require__(347);
-var MultilineTextField_1 = __webpack_require__(348);
+var MultilineTextField_1 = __webpack_require__(347);
+var DropdownField_1 = __webpack_require__(348);
 __webpack_require__(349);
 /**
  * Curried function that creates the JSX.Element from the component and props parameters
@@ -31803,25 +31803,25 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(18);
-var DropdownField = /** @class */ (function (_super) {
-    __extends(DropdownField, _super);
-    function DropdownField(props) {
+var MultilineTextField = /** @class */ (function (_super) {
+    __extends(MultilineTextField, _super);
+    function MultilineTextField(props) {
         var _this = _super.call(this, props) || this;
         _this._onChange = _this._onChange.bind(_this);
         return _this;
     }
-    DropdownField.prototype._onChange = function (ev) {
+    MultilineTextField.prototype._onChange = function (ev) {
         this.props.onChange(ev.currentTarget.value);
     };
-    DropdownField.prototype.render = function () {
+    MultilineTextField.prototype.render = function () {
         return (React.createElement("div", { className: 'field-group' },
             React.createElement("div", { className: 'field-label' },
                 React.createElement("label", null, this.props.label)),
-            React.createElement("select", { value: this.props.selectedKey, onChange: this._onChange }, this.props.options.map(function (o) { return React.createElement("option", { key: o.key, value: o.key }, o.text); }))));
+            React.createElement("textarea", { rows: 6, value: this.props.value, onChange: this._onChange })));
     };
-    return DropdownField;
+    return MultilineTextField;
 }(React.PureComponent));
-exports.DropdownField = DropdownField;
+exports.MultilineTextField = MultilineTextField;
 
 
 /***/ }),
@@ -31842,25 +31842,27 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(18);
-var MultilineTextField = /** @class */ (function (_super) {
-    __extends(MultilineTextField, _super);
-    function MultilineTextField(props) {
+var DropdownField = /** @class */ (function (_super) {
+    __extends(DropdownField, _super);
+    function DropdownField(props) {
         var _this = _super.call(this, props) || this;
         _this._onChange = _this._onChange.bind(_this);
         return _this;
     }
-    MultilineTextField.prototype._onChange = function (ev) {
+    DropdownField.prototype._onChange = function (ev) {
         this.props.onChange(ev.currentTarget.value);
     };
-    MultilineTextField.prototype.render = function () {
+    DropdownField.prototype.render = function () {
         return (React.createElement("div", { className: 'field-group' },
             React.createElement("div", { className: 'field-label' },
                 React.createElement("label", null, this.props.label)),
-            React.createElement("textarea", { rows: 6, value: this.props.value, onChange: this._onChange })));
+            React.createElement("select", { value: this.props.selectedKey, onChange: this._onChange }, this.props.options.map(function (o) {
+                return React.createElement("option", { key: o.key, value: o.key }, o.text);
+            }))));
     };
-    return MultilineTextField;
+    return DropdownField;
 }(React.PureComponent));
-exports.MultilineTextField = MultilineTextField;
+exports.DropdownField = DropdownField;
 
 
 /***/ }),

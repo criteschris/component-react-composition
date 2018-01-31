@@ -1,10 +1,23 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { assoc, compose, curry, juxt, lens, prop, set, view, Lens } from 'ramda';
+import {
+    assoc,
+    compose,
+    curry,
+    juxt,
+    lens,
+    prop,
+    set,
+    view,
+    Lens
+} from 'ramda';
 
-import { TextField, ITextFieldProps, ITextFieldState } from './components/TextField';
-import { DropdownField, IDropdownFieldOption } from './components/DropdownField';
+import { TextField } from './components/TextField';
 import { MultilineTextField } from './components/MultilineTextField';
+import {
+    DropdownField,
+    IDropdownFieldOption
+} from './components/DropdownField';
 
 import { ITask } from './types/ITask';
 import './App.css';
@@ -104,16 +117,19 @@ export class App extends React.Component<IAppProps, IAppState> {
         this._components = [
             compose(
                 bindComponentToProps(TextField),
-                createPropForComponent('Title', this._titleLens, this._onChanged)
+                createPropForComponent('Title',
+                    this._titleLens, this._onChanged)
             ),
             compose(
                 bindComponentToProps(MultilineTextField),
-                createPropForComponent('Description', this._descriptionLens, this._onChanged)
+                createPropForComponent('Description',
+                    this._descriptionLens, this._onChanged)
             ),
             compose(
                 bindComponentToProps(DropdownField),
                 addOptionsToProp(this.state.statusOptions),
-                createPropForComponent('Status', this._statusLens, this._onChanged)
+                createPropForComponent('Status',
+                    this._statusLens, this._onChanged)
             )
         ];
     }

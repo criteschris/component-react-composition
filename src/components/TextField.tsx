@@ -26,7 +26,10 @@ export class TextField extends React.PureComponent<ITextFieldProps, ITextFieldSt
                 <div className='field-label'>
                     <label>{this.props.label}</label>
                 </div>
-                <input type='text' value={this.props.value} onChange={this._onChange} />
+                <input
+                    type='text'
+                    value={this.props.value}
+                    onChange={this._onChange} />
             </div>
         );
     }

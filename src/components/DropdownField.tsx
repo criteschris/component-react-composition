@@ -32,8 +32,14 @@ export class DropdownField extends React.PureComponent<IDropdownFieldProps, IDro
                 <div className='field-label'>
                     <label>{this.props.label}</label>
                 </div>
-                <select value={this.props.selectedKey} onChange={this._onChange} >
-                    {this.props.options.map(o => <option key={o.key} value={o.key}>{o.text}</option>)}
+                <select
+                    value={this.props.selectedKey}
+                    onChange={this._onChange}>
+                    {this.props.options.map(o => {
+                        return <option
+                            key={o.key}
+                            value={o.key}>{o.text}</option>
+                    })}
                 </select>
             </div>
         );
